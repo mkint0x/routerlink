@@ -1,0 +1,8 @@
+.active {
+    background-color: darkgrey;
+}
+
+.navbar {
+    justify-content: center;
+    margin-top: 5px;
+}

@@ -1,0 +1,44 @@
+<form #f="ngForm">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="optionContol">Country</label>
+        </div>
+        <select [(ngModel)]="selCountry"
+                (change)="sort()"
+                #country
+                ngModel
+                id="optionContol"
+                class="custom-select"
+                name="countries">
+            <option value=""></option>
+            <option *ngFor="let i of byCountry; index as n" [ngValue]="n">{{ i.country }}</option>
+        </select>    
+      </div>
+
+    <div class="reportGroup" *ngIf="selCountry>=0" >
+        <div class="alert alert-danger">
+          <div class="content_container">
+            <div class="title"><strong>C</strong>asses</div>
+            <div class="count" id="cases">{{ tl_casses | number }}</div>
+          </div>
+        </div>
+        <div class="alert alert-warning">
+          <div class="content_container">
+            <div class="title"><strong>A</strong>ctive</div>
+            <div class="count" id="active">{{ tl_active | number }}</div>
+          </div>
+        </div>
+        <div class="alert alert-success">
+          <div class="content_container">
+            <div class="title"><strong>R</strong>ecovered</div>
+            <div class="count" id="repair">{{ tl_repair | number }}</div><br>
+          </div>
+        </div>
+        <div class="alert alert-secondary">
+          <div class="content_container">
+            <div class="title"><strong>D</strong>eaths</div>
+            <div class="count" id="deaths">{{ tl_deaths | number }}</div>
+          </div>
+        </div>
+    </div>
+</form>
