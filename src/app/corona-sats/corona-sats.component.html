@@ -3,7 +3,7 @@
         <div class="input-group-prepend">
           <label class="input-group-text" for="optionContol">Country</label>
         </div>
-        <select [(ngModel)]="selCountry"
+        <select [(ngModel)]="countryIndex"
                 (change)="sort()"
                 #country
                 ngModel
@@ -15,7 +15,7 @@
         </select>    
       </div>
 
-    <div class="reportGroup" *ngIf="selCountry>=0" >
+    <div class="reportGroup" *ngIf="countryIndex>=0" >
         <div class="alert alert-danger">
           <div class="content_container">
             <div class="title"><strong>C</strong>asses</div>

@@ -13,3 +13,18 @@
     font-weight: 100;
     text-decoration: none;
 }
+
+.member_info {
+    display: flex;
+    align-items: center;
+    margin: 30px;
+}
+
+.avatar {
+    width: 150px;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+}

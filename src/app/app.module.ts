@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
-import { NgpSortModule } from 'ngp-sort-pipe'
 
 import { AppComponent } from './app.component';
 import { FollowersComponent } from './followers/followers.component';
@@ -11,6 +10,8 @@ import { PostsComponent } from './posts/posts.component';
 import { NavComponent } from './nav/nav.component';
 import { CoronaSatsComponent } from './corona-sats/corona-sats.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { GetStatsService } from './services/get-stats.service';
+import { GithubFollowersService } from './services/github-followers.service';
 
 @NgModule({
   declarations: [
@@ -19,10 +20,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     PostsComponent,
     NavComponent,
     CoronaSatsComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
     RouterModule.forRoot([
       { path: '', component: FollowersComponent},
       { path: 'start', component: FollowersComponent},
@@ -33,9 +34,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    NgpSortModule
   ],
-  providers: [],
+  providers: [
+    GetStatsService,
+    GithubFollowersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

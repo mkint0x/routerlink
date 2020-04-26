@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GithubFollowersService } from '../services/github-followers.service';
 
 @Component({
   selector: 'app-posts',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
+  resObject;
+
+  constructor(private service: GithubFollowersService) { }
 
   ngOnInit() {
+    this.service.getData()
+      .subscribe(Response => {
+        this.resObject=Response
+      })
   }
 
 }
