@@ -8,11 +8,11 @@
     <h1>Github Members</h1>
     <div class="member_info" *ngFor="let object of resObject">
         <div class="avatar">
-            <img style="border-radius: 100%;" [src]="object['avatar_url']" width="100%" alt="">
+            <img style="border-radius: 100%;" src="{{object['avatar_url']}}" width="100%" alt="">
         </div>
         <div class="more">
-            <h4><a>{{ object['login'] | titlecase }}</a></h4>
-            <a href="https://github.com/mojombo">{{ object['html_url'] }}</a>
+            <h4><a [routerLink]="['/posts', object.id, object.login]">{{ object['login'] | titlecase }}</a></h4>
+            <a href="#">{{ object['html_url'] }}</a>
         </div>
     </div>
 </div>

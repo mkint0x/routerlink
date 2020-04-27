@@ -12,6 +12,8 @@ import { CoronaSatsComponent } from './corona-sats/corona-sats.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { GetStatsService } from './services/get-stats.service';
 import { GithubFollowersService } from './services/github-followers.service';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,15 @@ import { GithubFollowersService } from './services/github-followers.service';
     NavComponent,
     CoronaSatsComponent,
     NotFoundComponent,
+    GithubProfileComponent,
+    HomeComponent,
   ],
   imports: [
   BrowserModule,
     RouterModule.forRoot([
-      { path: '', component: FollowersComponent},
+      { path: '', component: HomeComponent},
       { path: 'start', component: FollowersComponent},
+      { path: 'posts/:id/:username', component: GithubProfileComponent },
       { path: 'posts', component: PostsComponent},
       { path: 'corona', component: CoronaSatsComponent},
       { path: '**', component: NotFoundComponent}
